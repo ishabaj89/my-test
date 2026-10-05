@@ -1,0 +1,112 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Search form in the hero
+.search {
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin-top: 48px;
+
+  @include below($bp-xsmall) {
+    flex-direction: column;
+  }
+
+  &__input {
+    flex: 1;
+    min-width: 0;
+    height: 63px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 0;
+    background-color: $color-white;
+    color: $color-grey;
+    font-family: $font-body;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    text-align: center;
+
+    &::placeholder {
+      color: $color-placeholder;
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: 3px solid $color-blue;
+      outline-offset: -3px;
+    }
+
+    // Red outline + hint only after the user has typed something invalid
+    &:not(:placeholder-shown):invalid {
+      outline: 3px solid $color-red;
+      outline-offset: -3px;
+    }
+
+    &:not(:placeholder-shown):invalid ~ .search__hint {
+      display: block;
+    }
+
+    @include below($bp-xsmall) {
+      flex: none;
+      height: 56px;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  &__button {
+    display: flex;
+    flex: 0 0 153px;
+    align-items: center;
+    justify-content: center;
+    height: 63px;
+    padding: 0 16px;
+    border: 2px solid $color-white;
+    border-radius: 0;
+    background-color: $color-blue;
+    color: $color-white;
+    font-family: $font-heading;
+    font-size: 14px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    .fa-magnifying-glass {
+      margin-left: 14px;
+      font-size: 20px;
+    }
+
+    @include hover-focus {
+      background-color: $color-blue-hover;
+    }
+
+    &:focus {
+      outline: 3px solid $color-blue;
+      outline-offset: 2px;
+    }
+
+    @include below($bp-xsmall) {
+      flex: none;
+      height: 56px;
+    }
+  }
+
+  // Error hint – hidden until the input is invalid
+  &__hint {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 8px 12px;
+    background-color: rgba($color-red, 0.92);
+    color: $color-white;
+    font-size: 14px;
+    line-height: 20px;
+
+    @include below($bp-small) {
+      position: static;
+    }
+  }
+}

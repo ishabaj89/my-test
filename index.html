@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Josefin+Sans:wght@400;700&family=Roboto:wght@400&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -35,82 +35,107 @@
          HEADER / HERO
     ========================== -->
 
-    <header>
+    <header id="home" class="hero">
 
-        <section id="home" class="hero">
+        <div class="hero__body">
 
-            <div class="hero__content">
+            <div class="hero__intro">
 
-                <h1>BHROMAON</h1>
+                <h1 class="hero__title">BHROMAON</h1>
 
-                <p class="hero__subtitle">
+                <p class="hero__tagline">
                     Safe Travel Anywhere
                 </p>
 
                 <form class="search" action="#" method="get">
 
                     <input
+                        class="search__input"
                         type="search"
                         name="destination"
                         placeholder="Search Your Travel Destination"
                         aria-label="Search your travel destination"
+                        aria-describedby="search-hint"
+                        minlength="3"
                         required
                     >
 
-                    <button type="submit">
+                    <button type="submit" class="search__button">
                         SEARCH
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-magnifying-glass"
+                            aria-hidden="true"></i>
                     </button>
+
+                    <p id="search-hint" class="search__hint">
+                        Please enter at least 3 characters.
+                    </p>
 
                 </form>
 
-                <a href="#why-us" class="scroll-down">
-                    Scroll Down
-                    <i class="fa-solid fa-chevron-down"></i>
-                </a>
-
             </div>
 
-        </section>
+            <a href="#why-us" class="hero__scroll">
+                Scroll Down
+                <i class="fa-solid fa-chevron-down"
+                    aria-hidden="true"></i>
+            </a>
+
+        </div>
 
 
         <!-- =========================
              NAVIGATION
         ========================== -->
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Main navigation">
 
-            <a href="#home" class="nav__logo">
-                BHROMAON
-            </a>
+            <div class="container nav__inner">
 
-            <ul class="nav__list">
+                <a href="#home" class="logo">
+                    BHROMAON
+                </a>
 
-                <li class="nav__item">
-                    <a href="#why-us" class="nav__link">
-                        WHO WE ARE
-                    </a>
-                </li>
+                <input
+                    type="checkbox"
+                    id="nav-toggle"
+                    class="nav__toggle"
+                    aria-label="Toggle navigation menu"
+                >
 
-                <li class="nav__item">
-                    <a href="#how-it-works" class="nav__link">
-                        WHAT WE DO
-                    </a>
-                </li>
+                <label for="nav-toggle" class="nav__burger">
+                    <i class="fa-solid fa-bars"
+                        aria-hidden="true"></i>
+                </label>
 
-                <li class="nav__item">
-                    <a href="#destination" class="nav__link">
-                        TRAVEL WITH US
-                    </a>
-                </li>
+                <ul class="nav__list">
 
-                <li class="nav__item">
-                    <a href="#contact" class="nav__link">
-                        CONTACT US
-                    </a>
-                </li>
+                    <li class="nav__item">
+                        <a href="#why-us" class="nav__link">
+                            WHO WE ARE
+                        </a>
+                    </li>
 
-            </ul>
+                    <li class="nav__item">
+                        <a href="#how-it-works" class="nav__link">
+                            WHAT WE DO
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#destination" class="nav__link">
+                            TRAVEL WITH US
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            CONTACT US
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
 
         </nav>
 
@@ -128,43 +153,49 @@
              WHY CHOOSE US
         ========================== -->
 
-        <section id="why-us" class="why-us">
+        <section id="why-us" class="why">
 
-            <div class="why-us__content">
+            <div class="container why__inner">
 
-                <h2>Why Choose Us</h2>
+                <div class="why__content">
 
-                <p>
-                    Tion and dislike men who are so beguiled and
-                    demoralized by desire by the charms of pleasure
-                    of the moment, so blinded by desire, that they
-                    cannot foresee.
-                </p>
+                    <h2 class="section-title">Why Choose Us</h2>
 
-                <p>
-                    Ddislike men who are so beguiled and demoralized
-                    by the charms of pleasure of the moment, so
-                    blinded by desire, that.
-                </p>
+                    <p class="why__text">
+                        Tion and dislike men who are so beguiled and
+                        demoralized by desire by the charms of pleasure
+                        of the moment, so blinded by desire, that they
+                        cannot foresee.
+                    </p>
 
-                <a href="#destination" class="button">
-                    EXPLORE PLACES
-                </a>
+                    <p class="why__text">
+                        Ddislike men who are so beguiled and demoralized
+                        by the charms of pleasure of the moment, so
+                        blinded by desire, that.
+                    </p>
 
-            </div>
+                    <a href="#destination" class="button">
+                        EXPLORE PLACES
+                    </a>
+
+                </div>
 
 
-            <div class="why-us__images">
+                <div class="why__gallery">
 
-                <img
-                    src="images/lake-boathouse-card_350x220.png"
-                    alt="Wooden house beside a peaceful lake"
-                >
+                    <img
+                        class="why__image why__image--first"
+                        src="images/lake-boathouse-card_350x220.png"
+                        alt="Wooden house beside a peaceful lake"
+                    >
 
-                <img
-                    src="images/mountain-cliff-card_350x220.png"
-                    alt="Mountain landscape"
-                >
+                    <img
+                        class="why__image why__image--second"
+                        src="images/mountain-cliff-card_350x220.png"
+                        alt="Mountain landscape"
+                    >
+
+                </div>
 
             </div>
 
@@ -175,69 +206,94 @@
              HOW IT WORKS
         ========================== -->
 
-        <section id="how-it-works" class="how-it-works">
+        <section id="how-it-works" class="how">
 
-            <article class="step">
+            <div class="container">
 
-                <i class="fa-solid fa-magnifying-glass"
-                    aria-hidden="true"></i>
+                <h2 class="visually-hidden">How It Works</h2>
 
-                <h3>Search Places</h3>
+                <svg class="steps__line" viewBox="0 0 781 101"
+                    aria-hidden="true">
+                    <path d="M10 84 Q200 -40 390 84 Q580 -40 771 84" />
+                </svg>
 
-            </article>
+                <ol class="steps">
+
+                    <li class="step">
+
+                        <span class="step__icon step__icon--search">
+                            <i class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"></i>
+                        </span>
+
+                        <h3 class="step__title">Search Places</h3>
+
+                    </li>
 
 
-            <article class="step">
+                    <li class="step">
 
-                <i class="fa-regular fa-circle-check"
-                    aria-hidden="true"></i>
+                        <span class="step__icon step__icon--select">
+                            <i class="fa-regular fa-circle-check"
+                                aria-hidden="true"></i>
+                        </span>
 
-                <h3>Select Places</h3>
+                        <h3 class="step__title">Select Places</h3>
 
-            </article>
+                    </li>
 
 
-            <article class="step">
+                    <li class="step">
 
-                <i class="fa-regular fa-thumbs-up"
-                    aria-hidden="true"></i>
+                        <span class="step__icon step__icon--book">
+                            <i class="fa-regular fa-thumbs-up"
+                                aria-hidden="true"></i>
+                        </span>
 
-                <h3>Book &amp; Enjoy</h3>
+                        <h3 class="step__title">Book &amp; Enjoy</h3>
 
-            </article>
+                    </li>
+
+                </ol>
+
+            </div>
 
         </section>
 
 
         <!-- =========================
-             DESTINATION - SPAIN
+             DESTINATION - HOUSE
         ========================== -->
 
         <section
             id="destination"
-            class="destination destination--spain"
+            class="destination destination--house"
         >
 
-            <div class="destination__card">
+            <div class="container destination__inner">
 
-                <p class="destination__country">
-                    Spain
-                </p>
+                <article class="destination__card">
 
-                <h2>
-                    GRAND SPAIN MADRID
-                </h2>
+                    <p class="destination__country">
+                        Spain
+                    </p>
 
-                <p>
-                    But I must explain to you how all this mistaken
-                    idea of account to denouncing pleasure and
-                    praising pain was account born and I account
-                    will give you a complete account of the system.
-                </p>
+                    <h2 class="destination__title">
+                        GRAND SPAIN MADRID
+                    </h2>
 
-                <a href="#contact" class="button">
-                    BOOK NOW
-                </a>
+                    <p class="destination__text">
+                        But I must explain to you how all this mistaken
+                        idea of account to denouncing pleasure and
+                        praising pain was account born and I account
+                        will give you a complete account of the system.
+                    </p>
+
+                    <a href="#contact" class="button">
+                        BOOK NOW
+                    </a>
+
+                </article>
 
             </div>
 
@@ -249,29 +305,33 @@
         ========================== -->
 
         <section
-            class="destination destination--sunset"
+            class="destination destination--sunset destination--right"
         >
 
-            <div class="destination__card">
+            <div class="container destination__inner">
 
-                <p class="destination__country">
-                    Spain
-                </p>
+                <article class="destination__card">
 
-                <h2>
-                    GRAND SPAIN MADRID
-                </h2>
+                    <p class="destination__country">
+                        Spain
+                    </p>
 
-                <p>
-                    But I must explain to you how all this mistaken
-                    idea of account to denouncing pleasure and
-                    praising pain was account born and I account
-                    will give you a complete account of the system.
-                </p>
+                    <h2 class="destination__title">
+                        GRAND SPAIN MADRID
+                    </h2>
 
-                <a href="#contact" class="button">
-                    BOOK NOW
-                </a>
+                    <p class="destination__text">
+                        But I must explain to you how all this mistaken
+                        idea of account to denouncing pleasure and
+                        praising pain was account born and I account
+                        will give you a complete account of the system.
+                    </p>
+
+                    <a href="#contact" class="button">
+                        BOOK NOW
+                    </a>
+
+                </article>
 
             </div>
 
@@ -284,39 +344,46 @@
 
         <section class="testimonial">
 
-            <h2>
-                What Our Tourist Say
-            </h2>
+            <div class="container">
+
+                <h2 class="section-title section-title--center">
+                    What Our Tourist Say
+                </h2>
 
 
-            <article class="testimonial__card">
+                <article class="testimonial__body">
 
-                <img
-                    src="images/hiker-misty-mountains_445x284.png"
-                    alt="Tourist standing in the mountains"
-                >
+                    <img
+                        class="testimonial__image"
+                        src="images/hiker-misty-mountains_445x284.png"
+                        alt="Tourist standing in the mountains"
+                    >
 
 
-                <div class="testimonial__content">
+                    <div class="testimonial__card">
 
-                    <h3>
-                        SAM SUMON
-                    </h3>
+                        <h3 class="testimonial__name">
+                            SAM SUMON
+                        </h3>
 
-                    <blockquote>
-                        <i class="fa-solid fa-quote-left"
-                            aria-hidden="true"></i>
+                        <blockquote class="testimonial__quote">
+                            <p>
+                                <i class="fa-solid fa-quote-left"
+                                    aria-hidden="true"></i>
 
-                        But I must explain to you how all this
-                        mistaken idea of account to denouncing
-                        pleasure and praising pain was account
-                        born and I account will give you a complete
-                        account of the system.
-                    </blockquote>
+                                But I must explain to you how all this
+                                mistaken idea of account to denouncing
+                                pleasure and praising pain was account
+                                born and I account will give you a
+                                complete account of the system.
+                            </p>
+                        </blockquote>
 
-                </div>
+                    </div>
 
-            </article>
+                </article>
+
+            </div>
 
         </section>
 
@@ -329,46 +396,55 @@
 
     <footer id="contact" class="footer">
 
-        <h2>BHROMAON</h2>
+        <a href="#home" class="footer__logo">
+            <span class="footer__brand">BHROMAON</span>
+            <span class="footer__tagline">Safe Travel Anywhere</span>
+        </a>
 
-        <p>
-            Safe Travel Anywhere
-        </p>
 
+        <ul class="social">
 
-        <div class="social-links">
+            <li>
+                <a href="#" class="social__link"
+                    aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"
+                        aria-hidden="true"></i>
+                </a>
+            </li>
 
-            <a href="#"
-                aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"
-                    aria-hidden="true"></i>
-            </a>
+            <li>
+                <a href="#" class="social__link"
+                    aria-label="Twitter">
+                    <i class="fa-brands fa-twitter"
+                        aria-hidden="true"></i>
+                </a>
+            </li>
 
-            <a href="#"
-                aria-label="Twitter">
-                <i class="fa-brands fa-twitter"
-                    aria-hidden="true"></i>
-            </a>
+            <li>
+                <a href="#" class="social__link"
+                    aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"
+                        aria-hidden="true"></i>
+                </a>
+            </li>
 
-            <a href="#"
-                aria-label="LinkedIn">
-                <i class="fa-brands fa-linkedin-in"
-                    aria-hidden="true"></i>
-            </a>
+            <li>
+                <a href="#" class="social__link"
+                    aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"
+                        aria-hidden="true"></i>
+                </a>
+            </li>
 
-            <a href="#"
-                aria-label="YouTube">
-                <i class="fa-brands fa-youtube"
-                    aria-hidden="true"></i>
-            </a>
+            <li>
+                <a href="#" class="social__link"
+                    aria-label="Pinterest">
+                    <i class="fa-brands fa-pinterest"
+                        aria-hidden="true"></i>
+                </a>
+            </li>
 
-            <a href="#"
-                aria-label="Pinterest">
-                <i class="fa-brands fa-pinterest"
-                    aria-hidden="true"></i>
-            </a>
-
-        </div>
+        </ul>
 
     </footer>
 

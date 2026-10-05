@@ -1,0 +1,115 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+// Main navigation bar + logo
+.nav {
+  background-color: $color-blue;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 83px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  // The checkbox itself is hidden; the label (burger icon) controls it
+  &__toggle {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__burger {
+    display: none;
+    padding: 4px 8px;
+    color: $color-white;
+    font-size: 24px;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-dark;
+    }
+  }
+
+  &__toggle:focus + &__burger {
+    outline: 3px solid $color-white;
+    outline-offset: 3px;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li + li {
+      margin-left: 40px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    color: $color-white;
+    font-family: $font-heading;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: border-color 0.2s ease;
+
+    @include hover-focus {
+      border-bottom-color: $color-white;
+    }
+
+    @include focus-ring;
+  }
+
+  // Small screens: burger icon + dropdown list
+  @include below($bp-small) {
+    &__burger {
+      display: block;
+    }
+
+    &__list {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 12px;
+      text-align: center;
+
+      li + li {
+        margin-left: 0;
+      }
+    }
+
+    &__link {
+      padding: 10px 0;
+    }
+
+    &__toggle:checked ~ &__list {
+      display: flex;
+    }
+  }
+}
+
+.logo {
+  color: $color-white;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+  letter-spacing: 2.4px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+
+  @include hover-focus {
+    color: $color-dark;
+  }
+
+  @include focus-ring;
+}

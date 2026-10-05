@@ -1,0 +1,103 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.how {
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+  padding: 70px 0 60px;
+  background-color: $color-grey;
+
+  .container {
+    position: relative;
+  }
+}
+
+.steps {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include below($bp-small) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  text-align: center;
+
+  & + & {
+    margin-left: 80px;
+
+    @include below($bp-large) {
+      margin-left: 20px;
+    }
+
+    @include below($bp-small) {
+      margin: 40px 0 0;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 99px;
+    height: 99px;
+    border-radius: 50%;
+    background-color: $color-grey;
+    font-size: 58px;
+
+    &--search {
+      color: $color-blue;
+    }
+
+    &--select {
+      color: $color-red;
+    }
+
+    &--book {
+      color: $color-sky;
+    }
+  }
+
+  &__title {
+    margin: 18px 0 0;
+    color: $color-light;
+    font-family: $font-heading;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+
+    @include below($bp-medium) {
+      font-size: 28px;
+    }
+  }
+}
+
+// Decorative curved SVG line that connects the three steps
+.steps__line {
+  position: absolute;
+  top: -34px;
+  left: 50%;
+  width: 781px;
+  height: 101px;
+  transform: translateX(-50%);
+  fill: none;
+  stroke: $color-white;
+  stroke-width: 1;
+  opacity: 0.5;
+
+  @include below($bp-large) {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+@use "variables" as *;
+
+// Media query for screens narrower than the given breakpoint
+@mixin below($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+// Same styles for mouse hover and keyboard focus
+@mixin hover-focus {
+  &:hover,
+  &:focus {
+    @content;
+  }
+}
+
+// Visible outline for keyboard users
+@mixin focus-ring($color: $color-white) {
+  &:focus-visible {
+    outline: 3px solid $color;
+    outline-offset: 3px;
+  }
+}
+
+// Full-size background photo (path is relative to the compiled main.css)
+@mixin cover-background($image) {
+  background-color: $color-dark;
+  background-image: url($image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

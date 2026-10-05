@@ -1,0 +1,28 @@
+// Colors (taken from the Figma design)
+$color-blue: #5474fd;
+$color-blue-dark: #496bfe;
+$color-blue-hover: #3456ea;
+$color-blue-hover-dark: #2a4bdc;
+$color-dark: #232323;
+$color-grey: #333;
+$color-light: #e8e8e8;
+$color-white: #fff;
+$color-offwhite: #fefefe;
+$color-placeholder: #999;
+$color-red: #ff6363;
+$color-sky: #00a2ff;
+
+// Fonts
+$font-body: "Josefin Sans", "Trebuchet MS", sans-serif;
+$font-heading: "Aleo", Georgia, serif;
+$font-quote: "Roboto", Arial, sans-serif;
+
+// Layout
+$container-width: 1113px;
+$gutter: 15px;
+
+// Breakpoints
+$bp-large: 1100px;
+$bp-medium: 992px;
+$bp-small: 768px;
+$bp-xsmall: 480px;

@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  min-height: 731px;
+  padding: 100px 0;
+  @include cover-background("../images/hiker-forest-dark_1770x731.png");
+
+  @include below($bp-medium) {
+    min-height: 0;
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin-bottom: 90px;
+
+    @include below($bp-medium) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include below($bp-medium) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    flex: 0 0 445px;
+    width: 445px;
+
+    @include below($bp-medium) {
+      flex: none;
+      width: 100%;
+      max-width: 445px;
+    }
+  }
+
+  &__card {
+    flex: 0 1 668px;
+    min-height: 287px;
+    margin: 0 0 0 -3px;
+    padding: 46px 25px 30px 62px;
+    background-color: $color-grey;
+
+    @include below($bp-medium) {
+      flex: none;
+      width: 100%;
+      max-width: 445px;
+      min-height: 0;
+      margin: 0;
+      padding: 30px 20px;
+    }
+  }
+
+  &__name {
+    color: $color-offwhite;
+    font-size: 20px;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
+
+  &__quote {
+    margin: 8px 0 0;
+    color: $color-blue;
+    font-family: $font-quote;
+    font-size: 12px;
+    line-height: 26px;
+
+    p {
+      margin: 0;
+    }
+  }
+}

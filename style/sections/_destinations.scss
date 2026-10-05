@@ -1,0 +1,60 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.destination {
+  display: flex;
+  align-items: center;
+  min-height: 700px;
+  padding: 80px 0;
+
+  @include below($bp-small) {
+    min-height: 0;
+    padding: 60px 0;
+  }
+
+  &--house {
+    @include cover-background("../images/modern-house-pool_1770x700.png");
+  }
+
+  &--sunset {
+    @include cover-background("../images/sunset-rocky-coast_1770x700.png");
+  }
+
+  &__inner {
+    display: flex;
+  }
+
+  &--right &__inner {
+    justify-content: flex-end;
+  }
+
+  &__card {
+    width: 543px;
+    max-width: 100%;
+    padding: 46px 32px 50px;
+    background-color: rgba($color-dark, 0.9);
+
+    @include below($bp-xsmall) {
+      padding: 30px 20px;
+    }
+  }
+
+  &__country {
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+  }
+
+  &__title {
+    margin: 23px 0 13px;
+    color: $color-offwhite;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    margin: 0 0 46px;
+  }
+}

@@ -1,0 +1,80 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 271px;
+  padding: 60px $gutter 40px;
+  background-color: $color-dark;
+  text-align: center;
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4px 8px;
+    color: $color-white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    @include hover-focus {
+      color: $color-blue;
+    }
+
+    @include focus-ring;
+  }
+
+  &__brand {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: 3.36px;
+    text-transform: uppercase;
+  }
+
+  &__tagline {
+    margin-top: 8px;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+  }
+}
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin: 0 8px;
+    color: $color-light;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+
+    @include hover-focus {
+      color: $color-blue;
+      transform: translateY(-2px);
+    }
+
+    &--active {
+      color: $color-blue;
+
+      @include hover-focus {
+        color: $color-white;
+      }
+    }
+
+    @include focus-ring($color-blue);
+  }
+}
